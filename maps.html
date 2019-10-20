@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+       /* Set the size of the div element that contains the map */
+      #map {
+        height: 400px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+
+       /* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 31.33%;
+  padding: 10px;
+  height: 200px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Style the footer */
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
+    </style>
+  </head>
+  <body>
+    <h3>ADITYA: THE TOPPER'S DESTINATION</h3>
+    <!--The div element for the map -->
+
+    <div id="map"></div>
+    <script>
+
+// Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  var home = {lat: 19.075604, lng: 72.991533};
+  // The map, centered at Uluru
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 4, center: home});
+  // The marker, positioned at Uluru
+  var marker = new google.maps.Marker({position: home, map: map, title : 'MI IT CHA TOPPER PATIL'});
+map.addListener('center_changed', function() {
+          // 3 seconds after the center of the map has changed, pan back to the
+          // marker.
+          window.setTimeout(function() {
+            map.panTo(marker.getPosition());
+          }, 3000);
+        });
+
+ marker.addListener('click', function() {
+          map.setZoom(15);
+          map.setCenter(marker.getPosition());
+          infowindow.setContent('HI IT WORKED');
+              infowindow.open(map);
+        });
+}
+
+
+
+//  function initMap() {
+//         var uluru = {lat: 19.075604, lng: 72.991533};
+//         var map = new google.maps.Map(document.getElementById('map'), {
+//           zoom: 15,
+//           center: uluru
+//         });
+
+//         var contentString = 'Flow Reaching';
+
+//         var infowindow = new google.maps.InfoWindow({
+//           content: contentString
+//         });
+
+//         var marker = new google.maps.Marker({
+//           position: uluru,
+//           map: map,
+//           title: '(PATIL THE GREAT)'
+//         });
+//         marker.addListener('click', function() {
+//           infowindow.open(map, marker);
+//         });
+//       }
+
+//   google.maps.event.addListener(marker, 'click', function() {
+//               infowindow.setContent('HI IT WORKED');
+//               infowindow.open(map, this);
+//             });
+
+
+
+  // function initMap() {
+  //       var map = new google.maps.Map(document.getElementById('map'), {
+  //         center: {lat: -33.866, lng: 151.196},
+  //         zoom: 15
+  //       });
+
+  //       var request = {
+  //         placeId: 'ChIJN1t_tDeuEmsRUsoyG83frY4',
+  //         fields: ['name', 'formatted_address', 'place_id', 'geometry']
+  //       };
+
+  //       var infowindow = new google.maps.InfoWindow();
+  //       var service = new google.maps.places.PlacesService(map);
+
+  //       service.getDetails(request, function(place, status) {
+  //         if (status === google.maps.places.PlacesServiceStatus.OK) {
+  //           var marker = new google.maps.Marker({
+  //             map: map,
+  //             position: place.geometry.location
+  //           });
+  //           google.maps.event.addListener(marker, 'click', function() {
+  //             infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
+  //               'Place ID: ' + place.place_id + '<br>' +
+  //               place.formatted_address + '</div>');
+  //             infowindow.open(map, this);
+  //           });
+  //         }
+  //       });
+  //     }
+  //   </script>
+  //   <!--Load the API from the specified URL
+  //   * The async attribute allows the browser to render the page while the API loads
+  //   * The key parameter will contain your own API key (which is not needed for this tutorial)
+  //   * The callback parameter executes the initMap() function
+  //   -->
+  // <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCVMheNjMrT7wqxEFFM98CEhJBeDAcClo&callback=initMap"
+  // type="text/javascript"></script>
+
+<!-- 
+
+  <div> <aside>Finally executed</aside>
+<SECTION> asdgasdc</SECTION>
+ -->
+ 
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;" border >Column</div>
+  <div class="column" style="background-color:#bbb;">Column</div>
+  <div class="column" style="background-color:#ccc;">Column</div>
+</div>
+
+
+
+<div class="footer">
+  <p>Footer</p>
+</div>
+
+
+
+  </div>
+  </body>
+</html>
+
+
+<!-- 
+REFERENCES
+https://developers.google.com/maps/documentation/javascript/tutorial
+
+ -->
