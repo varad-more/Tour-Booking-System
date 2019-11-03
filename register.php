@@ -58,7 +58,7 @@ if(isset($_POST["register"]))
   $result = $statement->fetchAll();
   if(isset($result))
   {
-   $base_url = "http://localhost/IP_project/test2/";  ///Project URL
+   $base_url = "http://localhost/ip_tours/";  ///Project URL
    $mail_body = "
    <p>Hi ".$_POST['user_name'].",</p>
    <p>Flow Reaching, its working!!</p>
@@ -210,7 +210,7 @@ if(isset($_POST["register"]))
          </tr>
          <tr>
           <td>
-           <input id="Button1" type="button" value="Check" onclick="alert(IsValid());"/>
+           <!-- <input id="Button1" type="button" value="Check" onclick="alert(IsValid());"/> -->
           </td>
        </tr>
       </table>
@@ -218,7 +218,7 @@ if(isset($_POST["register"]))
 
 
       <div class="form-group">
-       <input type="submit" name="register" id="register" value="Register" class="btn btn-info" />
+       <input type="submit" name="register" id="register" value="Register" class="btn btn-info" onclick="alert(IsValid());" />
       </div>
     
 <!-- Redirects to login page -->

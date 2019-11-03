@@ -146,12 +146,24 @@ button:hover{
 
 <div class="main">
             <ul>
-               <li><a href="./index.html">HOME</a></li>
+               <li><a href="http://localhost//ip_tours/index.php">HOME</a></li>
                <li  class="active"><a href="http://localhost//ip_tours/destinations.php?dest=full">DESTINATIONS</a></li>
                <!-- <META HTTP-EQUIV="Refresh"CONTENT="0; URL=http://www.yoursite.com/redirect_location"> -->
-               <li><a href="#">SERVICES</a></li>
                <li><a href="about.html">ABOUT</a></li>
-               <li><a href="#">CONTACTS</a></li>
+               <li><a href="team.html">TEAM</a></li>
+               <?php
+                include('database_connection.php');
+
+               if(isset($_SESSION['user_id']))
+                {
+                echo"<li><a href=\"http://localhost//ip_tours/logout.php\">LOGOUT</a></li>";
+                // echo $_SESSION['user_id'];
+                }
+                else {
+                  echo "<li><a href=\"http://localhost//ip_tours/login.php\">LOGIN</a></li>";
+                }
+
+                ?>
            </ul>
 <div class="dropdown">
 <button class="dropbtn" style="margin-top:2%;">Select Destination </button>
@@ -176,7 +188,7 @@ button:hover{
 <?php
 $var="₹";
 $var2=$_GET['dest'];
-session_start();
+// session_start();
 $mysqli=new MySQLi('localhost','root','','destinations');
 $sql = "SELECT loc_id, loc_name,details,price,imagepath FROM $var2";
 $result = $mysqli->query($sql);

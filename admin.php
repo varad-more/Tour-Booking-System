@@ -5,9 +5,18 @@
  <script>
 
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel ="stylesheet" href ="./css/admin.css">
+    
+
+    
  </head>
 
  <body>
+     <h2><a href="review.php">Review Recent Bookings</a></h2>
+     <h4 text-align="Right"><a href="logout.php">Logout</a></h4>
+     <br>
+     <div class="wrap">
      <div>
      <form method="post" id="admin">
      
@@ -50,7 +59,7 @@
 </form>
 
 
-
+</div>
       
 </body>
 
@@ -60,7 +69,7 @@
 $mysqli=new MySQLi('localhost','root','','destinations');
 
 if($mysqli){
-    echo "Connected";
+    // echo "Connected";
 }
     if(isset($_POST["admin"])){
 

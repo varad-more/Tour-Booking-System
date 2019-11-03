@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Sign Up Form</title>
+  <title>Forgot Password</title>
 
   <!-- Media Queries!! -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -10,7 +10,9 @@
 	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <!-- <link rel ="stylesheet" href ="./css/mob.css"> -->
     <link rel ="stylesheet" href ="./mystyle.css">
+    
 </head>
 
 <body>
@@ -20,7 +22,7 @@
     <!-- <div class="container" style="width:100%; max-width:600px"> -->
 
     <div class="wrap">
-		<h2>Forgot My Password</h2>
+		<h2>Forgot Password</h2>
         <form method="post" id="forgot_form">
         
       
@@ -33,11 +35,12 @@
       <div class="form-group">
        <input type="submit" name="forgot" id="forgot" value="Confirm" class="btn btn-info" />
       </div>  
+
     
 
     </form>
     <br>
-    <!-- <a href="login.php" style= "font-size= 12px;	line-height: 20px;	color:darkgrey; align = centre">ALREADY HAVE AN ACCOUNT?</a> -->
+    <a href="login.php" style= "font-size= 12px;	line-height: 20px;	color:darkgrey; align = centre">Remeber Password</a>
      
 </div>
 </body>
@@ -52,7 +55,7 @@ $user = $_POST['user_email'];
 $mail_body = "
    <p>Hi,</p>
    <p>Flow Reaching, its working!!</p>
-   <p>Please Open this link to reset your password - http://localhost/IP_project/test2/reset_password.php</p>
+   <p>Please Open this link to reset your password - http://localhost/ip_tours/reset_password.php</p>
    <p>Best Regards,<br />Varad More</p>";
 
    

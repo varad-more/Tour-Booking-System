@@ -33,8 +33,15 @@ if(isset($_POST["login"]))
     if(password_verify($_POST["user_password"], $row["user_password"]))
     {
      $_SESSION['user_id'] = $row['register_user_id'];
-     header("location:index.php");
+     if($row['admin'] == 'admin'){
+       header("location:admin.php");
+     }
+     else{
+      header("location:index.php");
+     }
     }
+    
+  
     else
     {
      $message = "<label>Wrong Password</label>";
@@ -58,7 +65,7 @@ if(isset($_POST["login"]))
 <!DOCTYPE html>
 <html>
  <head>
-  <title>IP Project</title>  
+  <title>Login</title>  
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
  
  </head>

@@ -11,7 +11,7 @@ if (!$mysqli) {
     die("Connection failed: " . mysqli_connect_error());
 }
 if ($mysqli){
-  echo "Connection zala";
+  // echo "Connection zala";
 }
 
 if(isset($_POST['submit'])) {
@@ -24,16 +24,16 @@ if(isset($_POST['submit'])) {
     $city = $_POST['city'];
     $state = $_POST['state'];
     $zip = $_POST['zip'];
-    $cardname = $_POST['cardname'];
-    $cardnumber = $_POST['cardnumber'];
-    $expmonth = $_POST['expmonth'];
-    $expyear = $_POST['expyear'];
-    $cvv = $_POST['cvv'];
+    // $cardname = $_POST['cardname'];
+    // $cardnumber = $_POST['cardnumber'];
+    // $expmonth = $_POST['expmonth'];
+    // $expyear = $_POST['expyear'];
+    // $cvv = $_POST['cvv'];
   // echo $customer_ip;
-  echo $firstname;
-  echo $email;
+  // echo $firstname;
+  // echo $email;
   // $insert =;
-$insert=$mysqli->query( "INSERT INTO orders (customer_ip, user_name, email, address, city, state, zip, name_card, card_num, expiry_month, expiry_year, CVV) VALUES ('$customer_ip','$firstname','$email','$address','$city','$state','$zip','$cardname','$cardnumber','$expmonth','$expyear','$cvv')");
+$insert=$mysqli->query( "INSERT INTO orders (customer_ip, user_name, email, address, city, state, zip, place, price) VALUES ('$customer_ip','$firstname','$email','$address','$city','$state','$zip','$location','$price')");
 
 
 //  $run_c = mysqli_query($con, $insert_c);
@@ -86,6 +86,8 @@ $insert=$mysqli->query( "INSERT INTO orders (customer_ip, user_name, email, addr
   if($mail->Send())        //Send an Email. Return true on success or false on error
   {
    $message = '<label class="text-success">Register Done, Please check your mail.</label>';
+  //  sleep(5);
+   
   }
   else {
    echo "Mailer Error: " . $mail->ErrorInfo;
@@ -94,6 +96,7 @@ $insert=$mysqli->query( "INSERT INTO orders (customer_ip, user_name, email, addr
 } else {
   echo "Error: " .$insert. "<br>" . $mysqli->error;
 }
+// header("location:index.php");
 }
 ?>
 
@@ -106,7 +109,9 @@ $insert=$mysqli->query( "INSERT INTO orders (customer_ip, user_name, email, addr
         <meta name="viewport" content="width=device-width">
         <meta name="description" content="Travel website">
         <meta name="keywords" content="HTML,CSS,XML,JavaScript">
-        <meta name="author" content="Shrunjala Mul">
+        <!-- <meta name="author" content="Shrunjala Mul"> -->
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
         <title>Outlines | Checkout</title>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" type="text/css" href="http://cdn.dcodes.net/2/payment_icons/dc_payment_icons.css" />
@@ -473,7 +478,7 @@ html {
                           </div>
                         </div>
               
-                        <div class="col-50">
+                        <!-- <div class="col-50">
                           <h3>Payment</h3>
                           <label for="fname">Accepted Cards</label>
                           
@@ -501,7 +506,7 @@ html {
                             </div>
                           </div>
                         </div>
-              
+               -->
                       </div>
                       
                      <input type="submit" class="btn" name="submit" value="Submit">
@@ -528,9 +533,39 @@ html {
                     <hr>
                     <h3>Total <span class="price" style="color:black"><b><?php $var="₹"; echo $var; echo $price; ?></b></span></h3>
                     <div class="row">
-                  <div class="column" style="background-color:#ccc;" >
-                
-                  <iframe src="https://www.google.com/maps/d/embed?mid=1mJa7HIXTeb3WU7FrDAhqmzQO2IQDoDnB" width="100%" height="100%"></iframe>
+                      <div class="column">
+                  <!-- <div class="column" style="background-color:#ccc;" > -->
+                  <!-- <iframe src="https://www.google.com/maps/d/embed?mid=1mJa7HIXTeb3WU7FrDAhqmzQO2IQDoDnB" width="100%" height="100%"></iframe>  -->
+                  <!-- <iframe><Script type ="text/javascript">
+                        function initMap() {
+  // The location of Uluru
+  var home = {lat: 19.075604, lng: 72.991533};
+  // The map, centered at Uluru
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 4, center: home});
+  // The marker, positioned at Uluru
+  var marker = new google.maps.Marker({position: home, map: map, title : 'MI IT CHA TOPPER PATIL'});
+map.addListener('center_changed', function() {
+          // 3 seconds after the center of the map has changed, pan back to the
+          // marker.
+          window.setTimeout(function() {
+            map.panTo(marker.getPosition());
+          }, 3000);
+        });
+
+ marker.addListener('click', function() {
+          map.setZoom(15);
+          map.setCenter(marker.getPosition());
+          infowindow.setContent('HI IT WORKED');
+              infowindow.open(map);
+        });
+}
+
+                        </Script>
+                        
+                        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCVMheNjMrT7wqxEFFM98CEhJBeDAcClo&callback=initMap"
+   type="text/javascript"></script>
+                      </iframe> -->
                 </div>
                   </div>
                   </div>

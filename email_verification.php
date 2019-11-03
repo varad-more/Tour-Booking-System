@@ -56,13 +56,13 @@ if(isset($_GET['activation_code']))
 <html>
  <head>
   <title>Email Verification</title>  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
   
  </head>
- <body bgcolor=#fff>
+ <body >
   
   <div class="container">
-   <h1 align="center">Email Verification</h1>
+   <h1 >Email Verification</h1>
   
    <h3><?php echo $message; ?></h3>
    <h3>Click Here to Login <a href="login.php">

@@ -1,0 +1,15 @@
+body{
+	background:url('../travel.gif');
+
+	background-size:cover;
+	font-family: 'heavenetica';
+    
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: left;
+    
+  }
+

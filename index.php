@@ -15,6 +15,7 @@
                <li><a href="about.html">ABOUT</a></li>
                <li><a href="team.html">TEAM</a></li>
                
+               
                <?php
                 include('database_connection.php');
 
