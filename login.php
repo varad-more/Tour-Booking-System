@@ -1,11 +1,11 @@
 <?php
 //login.php
-
+$profpic = "reg_wall.jpg";
 include('database_connection.php');
 
 if(isset($_SESSION['user_id']))
 {
- header("location:index.html");
+ header("location:index.php");
 }
 
 $message = '';
@@ -33,13 +33,14 @@ if(isset($_POST["login"]))
     if(password_verify($_POST["user_password"], $row["user_password"]))
     {
      $_SESSION['user_id'] = $row['register_user_id'];
-     header("location:index.html");
+     header("location:index.php");
     }
     else
     {
      $message = "<label>Wrong Password</label>";
     }
    }
+ 
    else
    {
     $message = "<label class='text-danger'>Please First Verify, your email address</label>";
@@ -58,11 +59,11 @@ if(isset($_POST["login"]))
 <html>
  <head>
   <title>IP Project</title>  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
  
  </head>
- <link rel="stylesheet" type="text/css" href="./style1.css">
- <body>
+ <link rel="stylesheet" type="text/css" href="css/style1.css">
+ <body><!-- background="reg_wall.jpg"> -->
     <!-- <backround > -->
 		<div class="loginbox">
 			<img src="logo.png" class="logo">

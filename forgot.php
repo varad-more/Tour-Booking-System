@@ -20,7 +20,7 @@
     <!-- <div class="container" style="width:100%; max-width:600px"> -->
 
     <div class="wrap">
-		<h2>Sign Up</h2>
+		<h2>Forgot My Password</h2>
         <form method="post" id="forgot_form">
         
       
@@ -52,7 +52,7 @@ $user = $_POST['user_email'];
 $mail_body = "
    <p>Hi,</p>
    <p>Flow Reaching, its working!!</p>
-   <p>Please Open this link to reset your password - http://localhost/IP_project/test2/forgot.php</p>
+   <p>Please Open this link to reset your password - http://localhost/IP_project/test2/reset_password.php</p>
    <p>Best Regards,<br />Varad More</p>";
 
    

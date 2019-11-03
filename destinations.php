@@ -18,7 +18,7 @@
  padding: 5px;
 }
 .dropbtn {
-  background-color: #4CAF50;
+  background-color: #000000;
     color: white;
     position:relative;
     margin-top:3%;
@@ -146,8 +146,8 @@ button:hover{
 
 <div class="main">
             <ul>
-               <li><a href="#">HOME</a></li>
-               <li  class="active"><a href="http://localhost//IP_project/test2/destinations.php?var2=full">DESTINATIONS</a></li>
+               <li><a href="./index.html">HOME</a></li>
+               <li  class="active"><a href="http://localhost//ip_tours/destinations.php?dest=full">DESTINATIONS</a></li>
                <!-- <META HTTP-EQUIV="Refresh"CONTENT="0; URL=http://www.yoursite.com/redirect_location"> -->
                <li><a href="#">SERVICES</a></li>
                <li><a href="about.html">ABOUT</a></li>

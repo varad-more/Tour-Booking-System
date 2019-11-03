@@ -81,7 +81,7 @@ $insert=$mysqli->query( "INSERT INTO orders (customer_ip, user_name, email, addr
   $mail->AddAddress($_POST['email'], $_POST['firstname']);  //Adds a "To" address   
   $mail->WordWrap = 50;       //Sets word wrapping on the body of the message to a given number of characters
   $mail->IsHTML(true);       //Sets message type to HTML    
-  $mail->Subject = 'Email Verification';   //Sets the Subject of the message
+  $mail->Subject = 'Bill Receipt';   //Sets the Subject of the message
   $mail->Body = $mail_body;       //An HTML or plain text message body
   if($mail->Send())        //Send an Email. Return true on success or false on error
   {

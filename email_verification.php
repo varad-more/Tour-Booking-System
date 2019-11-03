@@ -55,17 +55,17 @@ if(isset($_GET['activation_code']))
 <!DOCTYPE html>
 <html>
  <head>
-  <title>PHP Register Login Script with Email Verification</title>  
+  <title>Email Verification</title>  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   
  </head>
- <body>
+ <body bgcolor=#fff>
   
   <div class="container">
-   <h1 align="center">PHP Register Login Script with Email Verification</h1>
+   <h1 align="center">Email Verification</h1>
   
    <h3><?php echo $message; ?></h3>
-   
+   <h3>Click Here to Login <a href="login.php">
   </div>
  
  </body>

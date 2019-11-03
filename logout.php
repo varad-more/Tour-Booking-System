@@ -3,7 +3,14 @@
 session_start();
 
 session_destroy();
-
-header("location:login.php");
+// echo "Logout Successful";
+// sleep(10);
+header("location:index.php");
 
 ?>
+
+<!-- <html>
+<Body>
+<H1>Logout Successful</H1>
+</Body>
+</html> -->
